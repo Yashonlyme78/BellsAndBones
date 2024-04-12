@@ -1,0 +1,40 @@
+<!-- userInterface.hbs -->
+
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Interface</title>
+    <!-- Add your CSS links and other meta tags here -->
+    <link rel="stylesheet" href="/public/userInterface.css">
+</head>
+<body> --}}
+    <div class="container">
+        <h1>Welcome to the User Interface Page!</h1>
+        <!-- Design your user interface here -->
+        <div class="row">
+            <div class="col-md-6">
+                <h2>User Profile</h2>
+                <p>This section displays user profile information.</p>
+                <!-- You can include user profile details here -->
+                <p>Username: {{user.username}}</p>
+                <p>Email: {{user.email}}</p>
+                <!-- Add more profile details as needed -->
+            </div>
+            <div class="col-md-6">
+                <h2>Request for Pet Sitter</h2>
+                <p>This section allows users to post a request for a pet sitter.</p>
+                <!-- Design your form for requesting a pet sitter -->
+                <form action="/petSitter" method="post">
+                    <label for="petName">Pet Name:</label>
+                    <input type="text" id="petName" name="petName" required>
+                    <label for="additionalInfo">Additional Information:</label>
+                    <textarea id="additionalInfo" name="additionalInfo"></textarea>
+                    <button type="submit">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{{!-- </body>
+</html> --}}
