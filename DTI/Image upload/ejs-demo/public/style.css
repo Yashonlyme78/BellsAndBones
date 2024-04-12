@@ -1,0 +1,112 @@
+
+style.css
+/* Reset styles for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Set background image for the entire page */
+body {
+    background-image: url('https://i.pinimg.com/originals/54/1f/94/541f946227bc52d56916282cbace6729.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Center content vertically and horizontally */
+.hero {
+    display: flex;align-items: center;justify-content: center;height: 100vh;
+}
+.image{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+   
+    align-items: center;
+
+}
+.image img{
+    height: 100px;
+    width: 100px;
+}
+/* Styling for the prediction box */
+.prediction-box {
+    height: 400px;
+    width: 600px;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    background: #9acccb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.548); /* Add a subtle shadow */
+}
+.prediction-box h1{
+    font-size: 50px;
+    color: #000000; /* Adjust the color as needed */
+    margin-bottom: 40px;
+    margin-top: -2px; /* Move the text further above */
+}
+
+/* Styling for the drop area */
+.drop-area {
+    width: 400px;
+    height: 200px;
+    border: 2px dashed #486972;
+    border-radius: 20px;
+    background: #d6e2d6;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;align-items: center;justify-content: center;
+}
+
+/* Updated style for the Upload button */
+#Uploadbtn {
+    margin-top: 15px;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: #F39A8C;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+/* Styling for the span within drop area */
+.drop-area span {
+    display:contents;
+    font-size: 14px;
+    color: #777;
+    margin-top: 40px;
+}
+
+/* Hide the file input element */
+#input-file {
+    display: none;
+}
+.success_modal{
+    align-items: center;
+}
+.modal-content{
+    align-items: center;
+}
+.modal-content p{
+    font-size: 19px;
+    color: #000000;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+#close-modal{
+    margin-top: 5px;
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #F39A8C;
+    border: 1px solid #000;
+    cursor: pointer;
+    margin-left: 70px;
+}

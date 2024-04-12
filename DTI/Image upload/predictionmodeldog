@@ -1,0 +1,55 @@
+import os
+import torch
+import torchvision.transforms as transforms
+from PIL import Image
+
+# Load your trained model
+model = torch.load('Dogs_disease.pt')
+model.eval()
+
+# Specify the folder containing uploaded images
+folder_path = r'C:\Users\motia\Desktop\Project\Image upload\ejs-demo\uploads'
+
+# Get the list of files in the folder and sort them by modification time
+image_files = sorted(
+    [os.path.join(folder_path, file) for file in os.listdir(folder_path)],
+    key=os.path.getmtime,
+    reverse=True  # Sort in descending order to get the most recent file first
+)
+
+# Check if there are any image files in the folder
+if len(image_files) > 0:
+    # Take the most recent image
+    most_recent_image_path = image_files[0]
+
+    # Load the most recent image
+    image = Image.open(most_recent_image_path)
+    transform = transforms.Compose([transforms.Resize((224, 224)),
+                                    transforms.ToTensor()])
+    input_tensor = transform(image).unsqueeze(0)  # Add batch dimension
+
+    # Make predictions
+    with torch.no_grad():
+        output = model(input_tensor)
+        probabilities = torch.softmax(output, dim=1)
+        _, predicted_class = torch.max(probabilities, 1)
+
+        # Set a confidence threshold (e.g., 0.7)
+        confidence_threshold = 0.45
+
+        # Get the predicted category and its probability
+        predicted_index = predicted_class.item()
+        predicted_category = ['Bacterial_dermatosis', 'Fungal_infections',
+                             'Healthy', 'Hypersensitivity_allergic_dermatosis'][predicted_index]
+        confidence_score = probabilities[0, predicted_index].item()
+
+        # # Check if confidence is below threshold
+        if confidence_score < confidence_threshold:
+            predicted_category = 'Unknown'
+
+    print('----------------------------------------------------------------------------')
+    print(f"Predicted category: {predicted_category}")
+    print(f"Confidence score: {confidence_score:.4f}")
+    print('----------------------------------------------------------------------------')
+else:
+    print("No image files found in the specified folder.")

@@ -21,7 +21,18 @@ body {
     justify-content: center;
     height: 100vh;
 }
+.image{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+   
+    align-items: center;
 
+}
+.image img{
+    height: 100px;
+    width: 100px;
+}
 /* Styling for the prediction box */
 .prediction-box {
     height: 400px;

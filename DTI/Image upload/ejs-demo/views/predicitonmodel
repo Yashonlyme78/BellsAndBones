@@ -1,0 +1,66 @@
+from flask import Flask, render_template, request, jsonify
+from PIL import Image
+import os
+import torch
+import torchvision.transforms as transforms
+
+app = Flask(__name__)
+
+from flask import Flask
+
+app = Flask(__name__, static_folder='ejs-demo/public')
+
+
+
+# Load your trained model
+model = torch.load('Dogs_disease.pt')
+model.eval()
+
+# Define the folder containing uploaded images
+UPLOAD_FOLDER = r'C:\Users\Gaurav Singh\Image upload\ejs-demo\uploads'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# Define your class labels
+class_labels = ['Bacterial_dermatosis', 'Fungal_infections', 'Healthy', 'Hypersensitivity_allergic_dermatosis']
+
+# Function to process the uploaded image
+def process_image(image_path):
+    transform = transforms.Compose([transforms.Resize((224, 224)),
+                                    transforms.ToTensor()])
+    image = Image.open(image_path)
+    input_tensor = transform(image).unsqueeze(0)  # Add batch dimension
+
+    with torch.no_grad():
+        output = model(input_tensor)
+        probabilities = torch.softmax(output, dim=1)
+        _, predicted_class = torch.max(probabilities, 1)
+        predicted_index = predicted_class.item()
+        predicted_label = class_labels[predicted_index]
+        return predicted_label, probabilities[0, predicted_index].item()
+
+# Route to handle the homepage
+template_dir = os.path.abspath(r'ejs-demo/views')
+app.template_folder = template_dir
+@app.route('/')
+def home():
+    return render_template('homepage.ejs')
+
+# Route to handle image upload
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file part'})
+
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'})
+
+    if file:
+        filename = file.filename
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(file_path)
+        category, confidence = process_image(file_path)
+        return jsonify({'category': category, 'confidence': confidence})
+
+if __name__ == '__main__':
+    app.run(debug=True)

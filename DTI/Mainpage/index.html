@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title >Bells and Bones</title>
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- fonts awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="contact_nav_container">
+        <div class="container">
+          <div class="contact_nav">
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Address : Delhi
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                Email : Bells&Bones@gmail.com
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Phone Call : +91707337078
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <div class="custom_menu-btn">
+            <button onclick="openNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+          </div>
+          <div id="myNav" class="overlay">
+            <div class="menu_btn-style ">
+              <button onclick="closeNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div class="overlay-content">
+              <a class="active" href="index.html"> Home <span class="sr-only">(current)</span></a>
+              <a class="" href="http://127.0.0.1:5000/"> PAWG! (ai model)</a>
+              <a class="" href="http://localhost:3000/"> Chat app </a>
+              <a class="" href="http://localhost:8080/alldogs"> Adoption</a>
+              <a class="" href="testimonial.html"> Reviews</a>
+              <a class="" href="contact.html"> Contact Us</a>
+            </div>
+          </div>
+          <a class="navbar-brand" href="index.html" style="margin-left:110px; ">
+            <span style="font-size: 37px;">
+              Bells&Bones
+            </span>
+          </a>
+          <div class="user_option">
+            <a href="http://localhost:8080/signup">
+              <span>
+                Login
+              </span>
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+            <form class="form-inline">
+              <button class="btn  nav_search-btn" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- Taskbar section-->
+    <div class="taskbar" id="taskbar" style="background-color: #131313; align-items: center;">
+      <div class="taskbar_buttons" style="align-items: center;">
+        <a href="http://localhost:8080/alldogs" style="margin-left: 20px;align-items: center;">
+          <span style="color: #ffffff;">
+            View Adoptable Dogs
+          </span>
+        </a>
+        <a href="http://localhost:8080/allcats" style="margin-left: 45px;align-items: center;">
+          <span style="color: #ffffff;">
+            View Adoptable Cats
+          </span>
+        </a>
+        <a href="http://localhost:8080/adopt/request/" style="margin-left: 55px;align-items: center;">
+          <span style="color: #ffffff;">
+            View Adopt Requests
+          </span>
+        </a>
+        <a href="http://localhost:8080/pets/addpet/" style="margin-left: 75px;align-items: center;">
+          <span style="color: #ffffff;">
+            Add Pets
+          </span>
+        </a>
+        <a href="http://localhost:8080/adopted" style="margin-left: 90px;align-items: center;">
+          <span style="color: #ffffff; ">
+            View Adopted Pets
+          </span>
+        </a>
+        <a href="http://localhost:3000/" style="margin-left: 110px;align-items: center;">
+          <span style="color: #ffffff;margin-top: 50%;">
+            Chat Room
+          </span>
+        </a>
+    
+      </div>
+
+    </div>
+    <!-- slider section -->
+    <section class="slider_section position-relative">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+          <li data-target="#customCarousel1" data-slide-to="1"></li>
+          <li data-target="#customCarousel1" data-slide-to="2"></li>
+          <li data-target="#customCarousel1" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="box">
+              <div class="baby_detail">
+                <div class="baby_text">
+                  <h2>
+                   Want Pet?
+                  </h2>
+                </div>
+                <a href="http://localhost:8080/alldogs">
+                  Adoption shelter
+                </a>
+              </div>
+              <div class="care_detail">
+                <a href="contact.html">
+                  Contact Us
+                </a>
+                <div class="care_text">
+                  <h2>
+                    We will take <br />
+                    Care of <br />
+                    Adoption
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="baby_detail">
+                <div class="baby_text">
+                  <h2>
+                   Vaccinations?
+                  </h2>
+                </div>
+                <a href="vets.html">
+                  Book Here
+                </a>
+              </div>
+              <div class="care_detail">
+                <a href="vets.html">
+                  Book Here
+                </a>
+                <div class="care_text">
+                  <h2>
+                    At Home <br />
+                    Vaccination<br />
+                    Service
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="baby_detail">
+                <div class="baby_text">
+                  <h2>
+                   Want to chat
+                  </h2>
+                </div>
+                <a href="http://localhost:3000/">
+                  Chat App
+                </a>
+              </div>
+              <div class="care_detail">
+                <a href="http://localhost:3000/">
+                  Chat App
+                </a>
+                <div class="care_text">
+                  <h2>
+                    Chat with other <br />
+                    Pet owners & <br />
+                    Vets
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="baby_detail">
+                <div class="baby_text">
+                  <h2>
+                    Skin <br />
+                    Disease?
+                  </h2>
+                </div>
+                <a href="vets.html">
+                  Vet
+                </a>
+              </div>
+              <div class="care_detail">
+                <a href="http://127.0.0.1:5000/">
+                  PAWG!!
+                </a>
+                <div class="care_text">
+                  <h2>
+                    Try our skin <br />
+                    disease AI <br />
+                    prediction model.
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- service section -->
+
+  <section class="service_section ">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img style="margin-left: 60px;" src="images/service1.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h4>
+                Adoption Listing
+              </h4>
+              <p>
+                Check pets available for adoption near you.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="box ">
+            <div  sclass="img-box">
+              <img style="width: 150px;height: 70px;margin-left: 25px;" src="images/service2.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h4>
+                Chat with vet!
+              </h4>
+              <p>
+                Chat with our vets as well as other pet owners.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img style="margin-left:40px; height: 110px;width: 110px;" src="images/service3.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h4>
+                AI skin-disease prediction model
+              </h4>
+              <p>
+                Check your dog's skin disease from our advance AI model by just uploading a picture.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img style="margin-left: 60px;" src="images/service4.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h4>
+                Vets
+              </h4>
+              <p>
+               Book a appointments with vets near you or book a vaccination date!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+   <!-- client section -->
+
+   <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2 style="color: #252525;">
+          Reviews
+        </h2>
+      </div>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/client.jpg" alt="" />
+              </div>
+              <div class="client_detail">
+                <div class="client_name">
+                  <div class="client_info">
+                    <h4 style="color: #ffffff;">
+                      Bhavya Singhal
+                    </h4>
+                    <span style="color: #82c419;">
+                      Gaziabad
+                    </span>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p style="color: #ffffff;">
+                  “As a future veterinary, I believe that this website can be helpful for booking my appointments, reaching out to more pet owner/Shelters and doing social work. The idea of the AI model is quite impressive, the one suggestion I would give is that, the owners shouldn’t rely blindly on the AI, its always good to discuss with a professional.”
+                </p>
+              </div>
+            </div>
+          </div>
+          <div style="background-color: #25252500;" class="carousel-item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/client2.jpg" alt="" />
+              </div>
+              <div class="client_detail">
+                <div class="client_name">
+                  <div class="client_info">
+                    <h4 style="color: #ffffff;">
+                      Priyanka Motiani
+                    </h4>
+                    <span style="color: #82c419;">
+                      Bengaluru
+                    </span>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p style="color: #ffffff;">
+                  “As a pet owner this website seems quite useful to me and solves most of my problem. This helps me to take care of my pet and not worrying too much about where to look when I need help with it. It would be great if this website also gets me info about what I can give to my pet to eat and what to not.”  
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/client3.jpg" alt="" />
+              </div>
+              <div class="client_detail">
+                <div class="client_name">
+                  <div class="client_info">
+                    <h4 style="color: #ffffff;">
+                      Sumit Kumawat
+                    </h4>
+                    <span style="color: #82c419;">
+                      Rajasthan
+                    </span>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p style="font-size: large; color: #ffffff;">
+                  “एक पालतू जानवर की दुकान के मालिक के रूप में, मुझे लगता है कि यह वेबसाइट बहुत अच्छी है,                                                                                                                                                                  
+                  इससे मुझे अधिक ग्राहकों तक पहुंचने में मदद मिलेगी |”  
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol  class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+    <!-- why section -->
+
+    <section style="background-color: #252525; width: 100%;height: 50%px;margin-top: 20px;" class="why_section layout_padding">
+      <div  class="container">
+        <div class="heading_container">
+          <h2>
+            PAWG!!(AI model)
+          </h2>
+          <p style="color: #ffffff;">
+            Our very own dog skin disease detection AI.
+            Just upload a quick photo and check if your dog contain any of the following disease. 
+          </p>
+        </div>
+        <div class="why_container">
+          <div class="box">
+            <div class="img-box">
+              <img style="width: 190px;height: 190px;" src="images/why1.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>
+                Fungal Infections
+              </h5>
+              <a href="fung.html">
+                <span>
+                  Read More
+                </span>
+                <hr />
+              </a>
+            </div>
+          </div>
+          <div class="box">
+            <div class="img-box">
+              <img style="width: 190px;height: 290px;margin-top: 120px;" src="images/why2.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>
+                Bacterial Dermatosis
+              </h5>
+              <a href="Bact.html">
+                <span>
+                  Read More
+                </span>
+                <hr />
+              </a>
+            </div>
+          </div>
+          <div class="box">
+            <div class="img-box">
+              <img style="width: 190px;height: 190px;"  src="images/why3.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>
+                Hypersensitivity Allergic Dermatosis
+              </h5>
+              <a href="Hyper.html">
+                <span>
+                  Read More
+                </span>
+                <hr />
+              </a>
+            </div>
+          </div>
+          <div class="box">
+            <div class="img-box">
+              <img style="width: 195px;height: 195px;" src="images/why4.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>
+                Healthy
+              </h5>
+              <a href="Healthy.html">
+                <span>
+                  Read More
+                </span>
+                <hr />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- end why section -->
+
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container-fluid">
+      <div class="box">
+        <div class="img-box">
+          <img src="images/about-img.jpg" alt="" />
+        </div>
+        <div class="detail-box">
+          <h2>
+            About Us
+          </h2>
+          <p>
+            Our team's passion for animals and desire to make a positive impact on society led us to choose this measure. As pet owners, we know all too well the demands and challenges of raising pets. This service aligns well with our interests and principles because it will allow us to use our technological capabilities and innovations to solve real problems faced by animal treatment professionals, animal owners and animal shelters. 
+          </p>
+          <a href="about.html ">
+            <span>
+              Read More
+            </span>
+            <hr />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- we have section -->
+
+  <section class="wehave_section">
+    <div class="container-fluid">
+      <div class="box">
+        <div class="detail-box">
+          <h2>
+            Donate to our AI model dataset
+          </h2>
+          <p>
+           Help us make our AI model more accurate!
+          </p>
+          <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=9NpbLPKP2Uu9VHxQqyGVkLBEK9z4nRhAl9bqbC-3UyFUN01WU1lUSFhaSFNOWEQ0WldMWVI1WkRVUy4u">
+            <span>
+              Read More
+            </span>
+            <hr />
+          </a>
+        </div>
+        <div class="img-box">
+          <img src="images/we_img.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end we have section -->
+
+
+
+
+  <!-- contact section -->
+
+  <section style="background-color: #252525; width: 100%;height: 20%;margin-top: 10px;margin-bottom: 10px;align-items: center;"  class="contact_section layout_padding-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="contact-form">
+            <div class="heading_container">
+              <h2 style="margin-top: -60px;" >
+                Get In Touch
+              </h2>
+            </div>
+            <form action="">
+              <input type="text" placeholder="Full name " />
+              <div class="top_input">
+                <input type="email" placeholder="Email" />
+                <input type="text" placeholder="Phone Number" />
+              </div>
+              <input type="text" placeholder="Message" class="message_input" />
+              <div class="btn-box">
+                <button style="margin-bottom: 20px;" >
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="info_contact">
+            <h5>
+              Address
+            </h5>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Delhi
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +91 7073337078
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  Bells&Bones@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-md-4">
+          <div class="info_link_box">
+            <h5>
+              Navigation
+            </h5>
+            <div class="info_links">
+              <a class="active" href="index.html"> <i class="fa fa-angle-right" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
+              <a class="" href="about.html"> <i class="fa fa-angle-right" aria-hidden="true"></i> About</a>
+              <a class="" href="http://127.0.0.1:5000/"> <i class="fa fa-angle-right" aria-hidden="true"></i> PAWG!</a>
+              <a class="" href="team.html"> <i class="fa fa-angle-right" aria-hidden="true"></i> Chat app</a>
+              <a class="" href="testimonial.html"> <i class="fa fa-angle-right" aria-hidden="true"></i> Reviews</a>
+              <a class="" href="contact.html"> <i class="fa fa-angle-right" aria-hidden="true"></i> Contact Us</a>
+              <a class="" href="contact.html"> <i class="fa fa-angle-right" aria-hidden="true"></i> Buy us a coffee</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="footer_section container-fluid">
+    <p>
+      Made By NerdsWeebs.co 
+    </p>
+  </footer>
+  <!-- footer section -->
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="js/custom.js"></script>
+
+</body>
+
+</html>

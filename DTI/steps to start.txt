@@ -1,0 +1,11 @@
+step-1
+start all 4 folders in different visual studio workspace
+step-2
+install all necesarry libraries eg npm , node js etc
+step-3
+start all servers from node js by going onto this path:
+Desktop\DTI\au3_sd_pet-finder\Pet_Finder  and typing node index.js
+step-4
+start your mainpage on a different port
+step-5 
+start server 2 in node js using cmd by going onto this location Desktop\Project\Image upload\ejs-demo and typing node index.js

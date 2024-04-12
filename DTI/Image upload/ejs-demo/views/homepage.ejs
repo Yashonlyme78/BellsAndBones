@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Disease Prediction Model</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body style="background-image: url('https://i.pinimg.com/originals/54/1f/94/541f946227bc52d56916282cbace6729.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+
+    <!-- Task bar section -->
+    <!-- Task bar section -->
+<div style="background-color: #252525; width: 101.64%;height: 70px;margin-top: -10px;margin-left: -1%;margin-right: -2%;">
+  
+  
+    <button onclick="window.location.href = 'http://127.0.0.1:5500/index.html';" style="background-color: #00000000;border-color: #00000000;" >
+        <div class="img-home">
+            <img style="margin-left: 60px;margin-top: 15px; width: 25px;height: 25px;" src="https://www.pinclipart.com/picdir/big/178-1785162_white-home-icon-png-vector-royalty-free-download.png" alt="" />
+        </div>
+        <span style=" margin-left:57px;  ;color: white; background-color: transparent; border: none; cursor: pointer;">Home</span>
+        
+    </button>
+    <h1 style="color: #fff;font: size 20px;align-self: center;margin-left: 560px; margin-bottom: 20px;margin-top: -3.5%;">
+        Bells&Bones
+    </h1>
+</div>
+<div id="guidlines" style="margin-top:30px;display: flex;align-items: center;height: 130px;width: 100%;border-radius: 20px;background-color: #F39A8C;border-color: #000000;border-width:thin;box-shadow: 0 4px 6px rgba(0,0,0,0.548);" class="hero">
+    <h2 style="color: #000000; margin-top: -50px;margin-left: 580px;">
+        Guidelines
+    </h2>
+    <p style="color: #000000; margin-top: 40px;margin-left: -600px;width: 1100px;justify-self: center;">
+        Our model accuracy is 84% and can vary results sometimes its always good to take a second 
+        option and hence we strongly believe you should take advice from a verified vetenerian for you pet.
+    </p>
+    <span style="color: #000000; margin-top: 80px;margin-left: -1100px;">
+        Upload Image of pet skin area where the infection is most visible to get better and accurate results.
+    </span>
+</div>
+
+    <div style="display: flex;align-items: center;justify-content: center;height: calc(100vh - 30px);" class="hero">
+        <div style="height: 500px;width:600px;border:2px solid #000000; border-radius: 20px; background-color: #9acccb; display:flex;flex-direction: column;align-items: center;justify-content: center;box-shadow: 0 4px 6px rgba(0,0,0,0.548);" class="prediction-box">
+            <h1 style="font-size: 50px;color: #000000;margin-bottom: 40px;margin-top: -2px;">PAWG!! (AI Prediction)</h1>
+            <!-- Placeholder for AI prediction content -->
+            <form style="width: 400px;height: 250px;border: 2px dashed #486972;border-radius: 20px;background: #d6e2d6;padding:10px;text-align: center;display: flex;flex-direction: column;align-items: center;justify-content: center;" action="/upload" method="POST" enctype="multipart/form-data" class="drop-area" onsubmit="return validateForm()">
+                <label for="input-file">
+                    <div class="image" id="input-image">
+                        <img style="height: 100px; width: 100px;" src="https://i.pinimg.com/736x/b5/92/25/b59225144b4d82af1fe5adcbbfe81394.jpg" >
+                    </div>
+                    <span style="display:contents;font-size: 14px;color: #777;margin-top: 40px;" >Click to choose image</span>
+                    <span style="display:contents;font-size: 14px;color: #777;margin-top: 40px;" >or</span>
+                    <span style="display:contents;font-size: 14px;color: #777;margin-top: 40px;" >Drop your image here</span>
+                    <input style="display: none;" type="file" name="file" id="input-file" accept="image/*" />
+                </label>
+                <!-- Smaller image preview -->
+                <img id="image-preview" src="" style="max-width: 150px; max-height: 150px; display: none;" />
+                <div id="uploading" style="display: none; margin-top: 15px;">
+                    <span>Loading...</span>
+                    <div class="progress-bar" style="width: 100px; height: 10px; background-color: #ddd; margin-top: 5px;">
+                        <div id="progress" style="height: 100%; width: 0; background-color: #4caf50;"></div>
+                    </div>
+                </div>
+                <button style="margin-top: 15px;width: 100px;    height: 50px; border-radius: 20px;background-color: #F39A8C;border: 1px solid #000;cursor: pointer;display: none;" type="submit" id="Uploadbtn">Upload</button>
+            </form>
+            <!-- Error message (initially hidden) -->
+            <p id="error-message" style="display: none; color: red;">Bhow Bhow error!!</p>
+            <!-- Success message (initially hidden) -->
+            <p id="success-message" style="display: none; color: green;">Uploaded Successfully!</p>
+
+            <!-- Display prediction result -->
+            <div id="prediction-result" style="display: none;">
+                <div style="width: 400px;height: 100px;border: 2px dashed #486972;border-radius: 20px;background: #d6e2d6;padding:10px;text-align: center;display: flex;flex-direction: column;align-items: center;justify-content: center;">
+                    <p>Predicted category: <span id="predicted-category"></span></p>
+                    <p>Confidence score: <span id="confidence-score"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        function validateForm() {
+            const fileInput = document.getElementById('input-file');
+            if (!fileInput.files || fileInput.files.length === 0) {
+                document.getElementById('error-message').style.display = 'block';
+                return false;
+            }
+            return true;
+        }
+
+        document.getElementById('input-file').onchange = function () {
+            const file = this.files[0];
+            if (file) {
+                const src = URL.createObjectURL(file);
+                document.getElementById('image-preview').src = src;
+                document.getElementById('image-preview').style.display = 'block'; // Show image preview
+                document.getElementById('error-message').style.display = 'none'; // Hide error message
+                document.getElementById('input-image').style.display = 'none'; // Hide input image
+                document.getElementById('Uploadbtn').style.display = 'block'; // Show upload button
+            }
+        };
+
+        document.querySelector('.drop-area').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Hide the image inside the .image class
+            document.querySelector('.image img').style.display = 'none';
+
+            // Show the uploading message
+            document.getElementById('uploading').style.display = 'block';
+
+            // Hide the upload button
+            document.getElementById('Uploadbtn').style.display = 'none';
+
+            // Get the form data
+            const formData = new FormData(this);
+
+            // Simulate progress
+            let progress = 0;
+            const interval = setInterval(function() {
+                progress += 10;
+                document.getElementById('progress').style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(interval);
+
+                    // Send the form data to the server
+                    fetch('/upload', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Show the prediction result
+                        document.getElementById('prediction-result').style.display = 'block';
+                        document.getElementById('predicted-category').innerText = data.category;
+                        document.getElementById('confidence-score').innerText = data.confidence;
+
+                        // Hide the uploading message
+                        document.getElementById('uploading').style.display = 'none';
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        // Handle errors
+                    });
+                }
+            }, 200);
+        });
+    </script>
+</body>
+</html>
