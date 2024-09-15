@@ -42,3 +42,11 @@ Start the development server:
 
 
 Open your web browser and navigate to http://localhost:3000 to access the application.
+
+
+here is the front page UI of the webapp
+since the ai and chatapp works on server ,its not operable through this link hence this is just a demo!!
+
+https://bellsandbone.netlify.app/
+![image](https://github.com/user-attachments/assets/729d0b1e-83f4-4aa1-9a2e-010b476117af)
+
